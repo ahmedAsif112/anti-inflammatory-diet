@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 80px; /* adjust to your navbar height */
+}
+:root {
+  --header-height: 104px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 120px;
+  }
+}
