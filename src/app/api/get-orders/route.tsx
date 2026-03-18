@@ -10,10 +10,16 @@ export async function GET() {
             .sort({ createdAt: -1 })
             .toArray();
 
-        return NextResponse.json({ success: true, orders });
+        // ✅ ObjectId ko string mein convert karo
+        const serialized = orders.map(order => ({
+            ...order,
+            _id: order._id.toString(),
+        }));
+
+        return NextResponse.json({ success: true, orders: serialized });
 
     } catch (err) {
         console.error("Get orders error:", err);
-        return NextResponse.json({ success: false }, { status: 500 });
+        return NextResponse.json({ success: false, orders: [] }, { status: 500 });
     }
 }
