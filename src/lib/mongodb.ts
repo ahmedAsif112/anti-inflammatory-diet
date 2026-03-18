@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 const uri = process.env.MONGODB_URI!;
 
@@ -6,7 +6,17 @@ if (!uri) {
     throw new Error("MONGODB_URI environment variable is not set");
 }
 
-// Global cache to reuse connection in development (hot reload)
+const options = {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    },
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+    retryWrites: true,
+};
+
 declare global {
     var _mongoClient: MongoClient | undefined;
 }
@@ -15,11 +25,11 @@ let client: MongoClient;
 
 if (process.env.NODE_ENV === "development") {
     if (!global._mongoClient) {
-        global._mongoClient = new MongoClient(uri);
+        global._mongoClient = new MongoClient(uri, options);
     }
     client = global._mongoClient;
 } else {
-    client = new MongoClient(uri);
+    client = new MongoClient(uri, options);
 }
 
 export async function getDb() {
