@@ -158,16 +158,39 @@ function SuccessContent() {
                     </ul>
                 </div>
 
-                {/* Tip */}
+                {/* Spam notice */}
+                <div className="w-full bg-yellow-50 border border-yellow-200 rounded-2xl px-5 py-4 text-left">
+                    <p className="text-yellow-700 text-xs font-bold mb-1">📬 Check Your Spam / Junk Folder</p>
+                    <p className="text-yellow-600 text-xs leading-relaxed">
+                        Sometimes our emails land in spam. Please check your <strong>Spam</strong> or <strong>Junk</strong> folder and mark it as <strong>"Not Spam"</strong> so future emails reach your inbox.
+                    </p>
+                </div>
+
+                {/* Direct Drive link */}
+                <div className="w-full bg-[#E8F5EE] border border-[#d4edda] rounded-2xl px-5 py-4 text-left">
+                    <p className="text-[#2d5a3d] text-xs font-bold mb-1">📥 Or Download Directly From Here</p>
+                    <p className="text-[#5a5a4a] text-xs leading-relaxed mb-3">
+                        Can't find the email? No worries — access your complete bundle directly using the button below.
+                    </p>
+                    <a
+                        href="https://drive.google.com/drive/folders/1t1LK1B65wxp31RlMgzhVqX9gR4XdaHes?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-[#2d5a3d] hover:bg-[#245033] text-white font-bold text-xs px-5 py-2.5 rounded-full transition-all duration-200"
+                    >
+                        📂 Access My Bundle on Google Drive
+                    </a>
+                </div>
+
+                {/* Contact support */}
                 <div className="w-full bg-[#1a2e1f] rounded-2xl px-5 py-4 text-left">
-                    <p className="text-[#a8d5b5] text-xs font-bold mb-1">💡 Didn't receive the email?</p>
+                    <p className="text-[#a8d5b5] text-xs font-bold mb-1">🙋 Still having trouble?</p>
                     <p className="text-white/60 text-xs leading-relaxed">
-                        Check your spam/junk folder. If it's not there within 5 minutes,
-                        contact us at{" "}
-                        <a href="mailto:support@yourdomain.com" className="text-[#a8d5b5] underline">
-                            support@yourdomain.com
+                        Contact us at{" "}
+                        <a href="mailto:orders@antiinflammationguide.site" className="text-[#a8d5b5] underline">
+                            orders@antiinflammationguide.site
                         </a>{" "}
-                        with your order email and we'll resend immediately.
+                        with your order email and we'll help you immediately.
                     </p>
                 </div>
 
