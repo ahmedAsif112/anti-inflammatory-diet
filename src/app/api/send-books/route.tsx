@@ -4,7 +4,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ✅ Sirf ek link — apna Google Drive link yahan paste karo
-const BUNDLE_LINK = "https://drive.google.com/uc?export=download&id=TUMHARA_FILE_ID";
+const BUNDLE_LINK = "https://drive.google.com/drive/folders/1t1LK1B65wxp31RlMgzhVqX9gR4XdaHes?usp=sharing";
 const BUNDLE_NAME = "Anti-Inflammatory Complete Bundle 2026";
 
 export async function POST(req: Request) {
@@ -16,7 +16,7 @@ export async function POST(req: Request) {
         }
 
         await resend.emails.send({
-            from: "Anti-Inflammatory <orders@yourdomain.com>",
+            from: "orders@antiinflammationguide.site",
             to: email,
             subject: " Your Anti-Inflammatory Bundle is Here!",
             html: `
