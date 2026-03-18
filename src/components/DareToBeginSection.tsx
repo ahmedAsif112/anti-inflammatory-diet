@@ -75,7 +75,7 @@ export default function DareToBeginSection() {
                         </div>
 
                         <a
-                            href="#"
+                            href="/email"
                             className="inline-flex items-center gap-2 bg-[#1a2e1f] hover:bg-[#2d5a3d] text-white font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-200 active:scale-95 w-fit mt-1"
                         >
                             Start Your Journey →

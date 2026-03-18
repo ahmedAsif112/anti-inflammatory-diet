@@ -67,10 +67,10 @@ export default function Footer() {
                         </p>
                     </div>
                     <a
-                        href="#"
+                        href="/email"
                         className="flex-shrink-0 inline-flex items-center gap-2 bg-[#2d5a3d] hover:bg-[#3a7a52] text-white font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg transition-all duration-200 active:scale-95 whitespace-nowrap"
                     >
-                        🥗 Buy Your Plan Now
+                        Buy Your Plan Now
                     </a>
                 </div>
             </div>

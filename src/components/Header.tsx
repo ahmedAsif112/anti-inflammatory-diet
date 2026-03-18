@@ -109,21 +109,14 @@ export default function Header() {
                         {/* Right Actions */}
                         <div className="flex items-center gap-1 sm:gap-2">
 
-                            {/* Search */}
-                            <button
-                                onClick={() => setSearchOpen(!searchOpen)}
-                                className="p-2 text-[#3a3a3a] hover:text-[#2d5a3d] hover:bg-[#eee9df] rounded-full transition-colors duration-200"
-                                aria-label="Search"
-                            >
-                                <Search size={20} />
-                            </button>
+
 
                             {/* CTA Button — desktop */}
                             <a
-                                href="#"
+                                href="/email"
                                 className="hidden sm:inline-flex items-center gap-1.5 bg-[#2d5a3d] hover:bg-[#245033] text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors duration-200 shadow-sm whitespace-nowrap"
                             >
-                                🥗 Get Diet Plan
+                                Get Diet Plan
                             </a>
 
                             {/* Mobile Menu Toggle */}
@@ -162,10 +155,10 @@ export default function Header() {
                             <a href="#" className="hover:text-[#2d5a3d] transition-colors py-1 border-b border-[#e8e3da]">About</a>
                             <a href="#" className="hover:text-[#2d5a3d] transition-colors py-1 border-b border-[#e8e3da]">Blog</a>
                             <a
-                                href="#"
+                                href="/email"
                                 className="inline-flex items-center justify-center gap-2 bg-[#2d5a3d] text-white text-sm font-semibold px-4 py-2.5 rounded-full mt-1"
                             >
-                                🥗 Get Your Diet Plan Now
+                                Get Your Diet Plan Now
                             </a>
                         </nav>
                     </div>

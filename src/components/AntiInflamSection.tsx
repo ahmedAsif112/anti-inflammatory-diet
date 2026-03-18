@@ -105,7 +105,7 @@ export default function ForWomenSection() {
 
                         {/* CTA */}
                         <a
-                            href="#"
+                            href="/email"
                             className="inline-flex items-center justify-center gap-2 bg-[#1a2e1f] hover:bg-[#2d5a3d] active:scale-95 text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl shadow-xl shadow-[#1a2e1f]/20 transition-all duration-200 mt-2"
                         >
                             Let's Make 2026 Healthier — Grab the Offer! 📚

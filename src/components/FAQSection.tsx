@@ -112,13 +112,13 @@ export default function FAQSection() {
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                         <a
-                            href="mailto:support@example.com"
+                            href="mailto:orders@antiinflammationguide.site"
                             className="inline-flex items-center gap-2 border border-[#2d5a3d] text-[#2d5a3d] font-bold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-[#2d5a3d] hover:text-white transition-all duration-200 w-full sm:w-auto justify-center"
                         >
                             ✉️ Contact Support
                         </a>
                         <a
-                            href="#"
+                            href="/email"
                             className="inline-flex items-center gap-2 bg-[#2d5a3d] hover:bg-[#245033] text-white font-bold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 active:scale-95 w-full sm:w-auto justify-center"
                         >
                             Buy Your Plan Now
