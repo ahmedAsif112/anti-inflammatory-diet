@@ -10,7 +10,7 @@ export async function POST(req: Request) {
         if (!session_id) {
             return NextResponse.json({ valid: false }, { status: 400 });
         }
-
+        // djkfds
         const session = await stripe.checkout.sessions.retrieve(session_id);
 
         // Only valid if payment is complete
