@@ -59,7 +59,18 @@ function SuccessContent() {
                     body: JSON.stringify({ email: userEmail }),
                 });
 
-                // Step 4 — Clean up localStorage
+                // Step 4 — Save order to MongoDB
+                await fetch("/api/save-order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        email: userEmail,
+                        transactionId: verifyData.paymentIntent || session_id,
+                        sessionId: session_id,
+                    }),
+                });
+
+                // Step 5 — Clean up localStorage
                 localStorage.removeItem("pending_email");
 
                 setStatus("success");
