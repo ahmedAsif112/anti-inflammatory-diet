@@ -67,6 +67,7 @@ function SuccessContent() {
                         email: userEmail,
                         transactionId: verifyData.paymentIntent || session_id,
                         sessionId: session_id,
+                        refName: localStorage.getItem("ref_name") || "direct",
                     }),
                 });
 

@@ -11,6 +11,7 @@ type Order = {
     deliveredAt: string;
     status: string;
     createdAt: string;
+    refName: string;
 };
 
 export default function DashboardPage() {
@@ -23,6 +24,10 @@ export default function DashboardPage() {
             .then(r => r.json())
             .then(data => {
                 setOrders(data.orders || []);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Failed to fetch orders:", err);
                 setLoading(false);
             });
     }, []);
@@ -67,6 +72,27 @@ export default function DashboardPage() {
                     ))}
                 </div>
 
+                {/* Ref Stats */}
+                {orders.some(o => o.refName && o.refName !== "direct") && (
+                    <div className="bg-white rounded-2xl border border-[#e8e4dc] shadow-sm p-5 mb-6">
+                        <p className="text-xs font-bold uppercase tracking-widest text-[#8a8a7a] mb-3">👤 Sales by Referral</p>
+                        <div className="flex flex-wrap gap-3">
+                            {Object.entries(
+                                orders.reduce((acc, o) => {
+                                    const key = o.refName || "direct";
+                                    acc[key] = (acc[key] || 0) + 1;
+                                    return acc;
+                                }, {} as Record<string, number>)
+                            ).map(([ref, count]) => (
+                                <div key={ref} className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold ${ref === "direct" ? "bg-gray-100 text-gray-600" : "bg-blue-100 text-blue-700"}`}>
+                                    {ref === "direct" ? "🔗 Direct" : `👤 ${ref}`}
+                                    <span className="bg-white px-2 py-0.5 rounded-full text-xs">{count}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {/* Search */}
                 <div className="mb-4">
                     <input
@@ -93,7 +119,7 @@ export default function DashboardPage() {
                             <table className="w-full text-sm">
                                 <thead>
                                     <tr className="bg-[#f5f2eb] border-b border-[#e8e4dc]">
-                                        {["Order No.", "Email", "Transaction ID", "Delivered At", "Status"].map(h => (
+                                        {["Order No.", "Email", "Transaction ID", "Ref", "Delivered At", "Status"].map(h => (
                                             <th key={h} className="text-left px-4 py-3 text-xs font-bold text-[#8a8a7a] uppercase tracking-wider whitespace-nowrap">
                                                 {h}
                                             </th>
@@ -114,6 +140,11 @@ export default function DashboardPage() {
                                             </td>
                                             <td className="px-4 py-3 text-[#8a8a7a] font-mono text-xs whitespace-nowrap max-w-[200px] truncate">
                                                 {o.transactionId}
+                                            </td>
+                                            <td className="px-4 py-3 whitespace-nowrap">
+                                                <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold ${o.refName === "direct" ? "bg-gray-100 text-gray-600" : "bg-blue-100 text-blue-700"}`}>
+                                                    {o.refName === "direct" ? "🔗 Direct" : `👤 ${o.refName}`}
+                                                </span>
                                             </td>
                                             <td className="px-4 py-3 text-[#5a5a4a] whitespace-nowrap">
                                                 {formatDate(o.deliveredAt)}

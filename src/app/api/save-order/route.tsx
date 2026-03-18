@@ -3,7 +3,7 @@ import { getDb } from "@/lib/mongodb";
 
 export async function POST(req: Request) {
     try {
-        const { email, transactionId, sessionId } = await req.json();
+        const { email, transactionId, sessionId, refName } = await req.json();
 
         if (!email || !transactionId) {
             return NextResponse.json({ success: false, error: "Missing fields" }, { status: 400 });
@@ -12,7 +12,6 @@ export async function POST(req: Request) {
         const db = await getDb();
         const orders = db.collection("orders");
 
-        // Generate order number — ORD-0001 format
         const count = await orders.countDocuments();
         const orderNumber = `ORD-${String(count + 1).padStart(4, "0")}`;
 
@@ -21,6 +20,7 @@ export async function POST(req: Request) {
             transactionId,
             sessionId,
             email,
+            refName: refName || "direct",
             deliveredAt: new Date(),
             status: "delivered",
             createdAt: new Date(),

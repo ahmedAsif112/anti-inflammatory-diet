@@ -22,6 +22,8 @@ export async function POST(req: Request) {
             valid: true,
             email: session.customer_email,
             amount: session.amount_total,
+            // ✅ Real Stripe Transaction ID (Payment Intent ID)
+            paymentIntent: session.payment_intent as string,
         });
 
     } catch {
