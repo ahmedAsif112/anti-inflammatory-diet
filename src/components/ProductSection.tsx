@@ -92,7 +92,7 @@ export default function ProductSection() {
 
                         {/* Buttons */}
                         <div className="flex flex-col gap-2.5 sm:gap-3">
-                            {/* df */}
+                            {/* dkfhsk */}
                             <a
                                 href="/email"
                                 className="w-full inline-flex items-center justify-center gap-2 bg-[#2d5a3d] hover:bg-[#245033] text-white font-extrabold text-xs sm:text-sm py-3 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-lg shadow-[#2d5a3d]/30 transition-all duration-200 active:scale-95"
