@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const BUNDLE_LINK = "https://drive.google.com/drive/folders/1t1LK1B65wxp31RlMgzhVqX9gR4XdaHes?usp=sharing";
 const BUNDLE_NAME = "Anti-Inflammatory Complete Bundle 2026";
-const FROM_EMAIL = "orders@antiinflammationguide.site";
+const FROM_EMAIL = "orders@antiinflammationguide.store";
 // hello
 export async function POST(req: Request) {
     try {
