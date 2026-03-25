@@ -225,6 +225,15 @@ export default function BeforeAfterSection() {
                     ))}
                 </div>
             </div>
+
+            <div className="flex justify-center mt-10 px-5 sm:px-8">
+                <a
+                    href="/email"
+                    className="inline-flex items-center justify-center gap-2 bg-[#2d5a3d] hover:bg-[#245033] active:scale-95 text-white font-bold text-sm sm:text-base px-8 py-4 rounded-2xl shadow-xl shadow-[#1a2e1f]/20 transition-all duration-200 w-full max-w-xs sm:max-w-sm md:w-auto"
+                >
+                    Buy Now
+                </a>
+            </div>
         </section>
     );
 }
